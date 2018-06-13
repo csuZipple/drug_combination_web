@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DrugCombDB is devoted to the research and development of multi-component drugs.">
+    <meta name="author" content="zipple">
+    <meta name="keywords" content="drug,combination,database">
+    <title>DrugCombDB - the drug combination database</title>
+    <link href="../../resource/css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../../resource/css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../../resource/css/dcdb.css" type="text/css" rel="stylesheet"/>
+    <!-- @media query -->
+</head>
+<body>
+    <header>
+        <a href="main.html" class="zl_logo">DrugCombDB</a>
+        <div class="zl_tabs">
+            <a href="main.html">home</a>
+            <a href="browser.html">browser</a>
+            <a href="tutorial.html">tutorial</a>
+            <a class="active" href="download.html">download</a>
+            <div class="zl_drop_down">contact</div>
+        </div>
+
+        <div class="zl_search_wrapper">
+            <input type="text" title="" placeholder="Search drugs or other..."/>
+            <img src="../../resource/images/icon/search.png" alt="search">
+
+            <div class="zl_search_tips">
+                <ul>
+                    <li>This is tips placeholder</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="zl_page zl_download_page">
+
+        <!-- the download  -->
+        <div class="zl_download_header">
+            <div>
+                <h1>Tips</h1>
+                <p>Freely choose to download datasets in different formats and customize them according to your needs.</p>
+            </div>
+        </div>
+
+        <main>
+            <p class="zl_download_title">Version 1.0.1</p>
+            <p class="zl_download_tips">Note: Data sets are not commercially available without authorization.</p>
+            <div>
+                <p class="zl_download_table_title">The DataSets:</p>
+                <table class="zl_download_table">
+                    <tr><th>For windows</th><th>For linux</th></tr>
+                    <tr><td><a href="#!">integrate.zip</a></td><td><a href="#!">integrate.tar.gz</a></td></tr>
+                    <tr><td><a href="#!">sql.zip</a></td><td><a href="#!">sql.tar.gz</a></td></tr>
+                </table>
+            </div>
+            <div>
+                <p class="zl_download_table_title">Example Data Format:</p>
+                <table class="zl_download_table">
+                    <tr><th>id</th><th>fid</th><th>source</th><th>drug1name</th><th>drug2name</th><th>conc1</th><th>conc2</th><th>growth</th><th>cellline</th></tr>
+                    <tr><td>1</td><td>1</td><td>Vemurafenib</td><td>Vemurafenib</td><td>0.000</td><td>0.000</td><td>0.630635764944276</td><td>A-375</td><td>PMC5248573</td></tr>
+                </table>
+            </div>
+
+            <div>
+                <p style="padding: 0 0 10px 0;">Column descriptions:</p>
+                <ul>
+                    <li>id: key</li>
+                    <li>fid: foreign key</li>
+                    <li>source: the origin data</li>
+                    <li>drug1name: drug name</li>
+                    <li>drug2name: drug name</li>
+                    <li>conc1: drug concentration</li>
+                    <li>conc2: drug concentration</li>
+                    <li>growth: Combined drug sensitivity score for this cancer cell line, between 0-1</li>
+                    <li>cellline: The name of the cancer cell line</li>
+                </ul>
+            </div>
+
+        </main>
+
+    </section>
+
+    <footer>
+        <div class="bottom-info">
+            <div>Copyright &copy; 2018 CSU. All Rights Reserved. </div>
+            <div>DrugCombDB</div>
+        </div>
+    </footer>
+
+<!--  about dialog  -->
+    <div class="zl_contact_dialog">
+        <h3>Get in touch with us</h3>
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <p>First Name:</p>
+                <input type="text" title="">
+            </div>
+
+            <div class="zl_input">
+                <p>Last Name:</p>
+                <input type="text" title="">
+            </div>
+        </div>
+
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <p>Your Email:</p>
+                <input type="text" title="">
+            </div>
+        </div>
+
+        <div class="zl_form_row">
+            <div class="zl_input zl_full_row">
+                <p>How can we help?</p>
+                <textarea name="" id="" cols="30" rows="5" title="" placeholder="All comments and suggestions are welcome."></textarea>
+            </div>
+        </div>
+
+
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <button class="zl_btn zl_submit_btn" onclick="onSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../resource/js/jquery.js"></script>
+<script type="text/javascript" src="../../resource/js/base.js"></script>
+</html>

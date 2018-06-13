@@ -1,0 +1,38 @@
+/**
+ The global style.
+ */
+
+
+::selection{
+    background-color: #26b89a;
+    color: #FFFFFF;
+}
+
+a{
+    text-decoration:none;
+    position: relative;
+}
+a::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: currentColor;
+    transform: scale(0);
+    transition:all .35s;
+}
+a:hover::after{
+    transform: scale(1);
+}
+.box-shadow{
+    box-shadow: 0 30px 30px -10px rgba(33,71,109,0.3), 0 0 20px -2px rgba(15,81,148,0.2);
+}
+
+.dark-red{
+    background: #e14d57;
+}
+.light-red{
+    background: #ef4d57;
+}

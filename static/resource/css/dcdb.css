@@ -1,0 +1,686 @@
+/**
+  For the project style
+ */
+html,body{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background:  #f4f6f8;
+    font: 16px Georgia, serif;
+}
+
+body{
+    min-width: 1366px;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+
+    position: fixed;
+    z-index: 999;
+    border-bottom: 1px solid #eee;
+    background-color: rgba(255,255,255,.8);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.zl_logo{
+    width: 180px;
+    height: 100%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zl_tabs{
+    width: 70%;
+    height: 100%;
+
+    display: flex;
+}
+
+
+.zl_tabs a div{
+    text-transform: none;
+}
+.zl_tabs a{
+    width: 140px;
+    text-transform: uppercase;
+    color: #777777;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zl_tabs a:hover{
+    color: #212121;
+}
+
+a.active{
+    color: #212121;
+}
+a.active:hover::after{
+    transform: scale(0);
+}
+
+.zl_drop_down{
+    cursor: pointer;
+    position: relative;
+    width: 140px;
+    text-transform: uppercase;
+    color: #777777;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* about the drop down dialog */
+.zl_drop_down:hover{
+    color: #212121;
+}
+.zl_contact_dialog{
+    display: none;
+    width: 600px;
+    padding: 30px;
+
+    cursor: default;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+
+    transform:translate(-50%,-30%);
+
+    border: 1px solid #eeeeee;
+    background: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 30px 30px -10px rgba(33,71,109,0.3), 0 0 20px -2px rgba(15,81,148,0.2);;
+}
+
+.zl_form_row{
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.zl_input{
+    width: 48%;
+}
+.zl_full_row{
+    width:100%;
+}
+.zl_form_row input{
+    border: 1px solid #cccccc;
+    border-radius:5px;
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    box-sizing: border-box;
+
+    padding-left: 5px;
+}
+.zl_form_row input:focus,.zl_form_row textarea:focus{
+    border: 1px solid #2a2a2a;
+}
+.zl_input textarea{
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    padding: 3px;
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+}
+.zl_search_wrapper{
+    width: auto;
+    height: 60%;
+
+    border: 1px solid #e8e8e8;
+    border-radius:30px;
+    padding: 3px 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position:relative;
+}
+
+.zl_search_wrapper input{
+    width: 150px;
+    height: 100%;
+    background: transparent;
+}
+.zl_search_wrapper input:focus{
+    width: 220px;
+}
+
+.zl_search_wrapper input::placeholder{
+    color: #515151;
+}
+
+.zl_search_wrapper img{
+    width: 20px;
+
+    object-fit: contain;
+}
+
+.zl_search_tips{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 124%;
+
+    display: none;
+}
+
+.zl_search_tips ul{
+    width:100%;
+    height: auto;
+
+    list-style: none;
+    background: rgba(255,255,255,.9);
+}
+
+.zl_search_tips ul li{
+    width: 100%;
+    min-height: 30px;
+    cursor:default;
+    padding: 3px 8px;
+    box-sizing:border-box;
+    border-bottom:1px solid #eeeeee;;
+
+    display: flex;
+    align-items: center;
+}
+
+.zl_search_tips ul li:hover{
+    background: #000;
+    color: #FFFFFF;
+}
+
+/* about the first page of main.html */
+.zl_page{
+    width: 100%;
+    min-height: 100%;
+    /*background: rgb(204,232,207);*/
+    padding-top: 60px;
+    box-sizing: border-box;
+
+    position: relative;
+
+    flex: 1 0 auto;
+}
+
+.zl_main_page main{
+    width: 30%;
+    height: auto;
+    padding: 5px;
+
+    margin: 100px 0 0 250px;
+
+    transition: all 1s;
+}
+
+.zl_main_page main h1{
+    font-weight: 700 !important;
+    font-size: 36px;
+}
+
+.zl_main_page main p{
+    margin-top: 20px;
+    color: #777777;
+}
+
+.zl_detail{
+    display: none;
+}
+.zl_detail p{
+    color: #212121 !important;
+    line-height: 24px;
+    text-align: justify;
+    word-break: keep-all;
+}
+
+.zl_btn{
+    width: auto;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #4683db;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: normal;
+    cursor: pointer;
+    margin: 10px auto;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+}
+
+.zl_submit_btn:hover{
+    background-color: #272ae3;
+}
+
+.zl_learn_more{
+    background-color: #e14d57;
+    margin-top: 20px;
+    box-shadow: 0 20px 20px -10px rgba(200,0,0,0.25), 0 5px 10px 0 rgba(200,0,0,0.15);
+    transition: box-shadow .2s ease;
+}
+.zl_fold{
+    background-color: #e14d57;
+    margin-top: 20px;
+    text-transform: none;
+    box-shadow: 0 20px 20px -10px rgba(200,0,0,0.25), 0 5px 10px 0 rgba(200,0,0,0.15);
+    transition: box-shadow .2s ease;
+}
+
+.zl_fold:hover{
+    box-shadow: none;
+    background-color: #ef4d57;
+}
+
+.zl_learn_more:hover{
+    box-shadow: none;
+    background-color: #ef4d57;
+}
+
+.zl_main_page aside{
+    width: 32%;
+    height: auto;
+    padding: 5px;
+
+    position: absolute;
+    right: 10%;
+    top: 130px;
+}
+
+.zl_main_page aside figure{
+    width: 100%;
+    background:#FFFFFF;
+    padding:  12px 12px 0 12px;
+
+    box-shadow: 0 30px 30px -10px rgba(33,71,109,0.3), 0 0 20px -2px rgba(15,81,148,0.2);
+}
+
+.zl_main_page aside figure:hover{
+    box-shadow: none;
+}
+.zl_main_page aside figure:hover figcaption{
+    color: #212121;
+}
+
+.zl_main_page aside figure img{
+    width: 100%;
+    /*border: 1px solid #e8e8e8;*/
+    object-fit: contain;
+}
+
+.zl_main_page aside figure figcaption{
+    padding: 8px;
+    height: 30px;
+    line-height: 30px;
+    color: #777777;
+}
+
+/* about browser page. */
+.zl_browser_page{
+     box-sizing: border-box;
+     padding: 80px 120px;
+ }
+
+.zl_browser_page main{
+    width: 100%;
+    min-height: 530px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.zl_browser_page main figure{
+    width: 30%;
+
+    cursor: pointer;
+
+    padding: 12px;
+    border: 1px solid #e8e8e8;
+    background: #FFFFFF;
+    box-shadow: 0 30px 30px -10px rgba(33,71,109,0.3), 0 0 20px -2px rgba(15,81,148,0.2);
+
+    position: relative;
+}
+
+figure img{
+    width: 100%;
+
+    object-fit: contain;
+}
+
+
+.zl_browser_page main figure:hover{
+    box-shadow: none;
+}
+
+.zl_browser_page main figure:hover p{
+    color: #212121;
+}
+
+.zl_browser_page main figure figcaption{
+    padding: 8px;
+    font-weight: 700;
+}
+.zl_browser_page main figure figcaption:hover{
+    text-decoration:underline;
+}
+.zl_browser_page main figure p:hover{
+    text-decoration:underline;
+}
+.zl_browser_page main figure p{
+    padding: 8px;
+    font-size: 14px;
+    color: #777777;
+}
+
+/*  about data display  */
+
+.zl_individual_drug_page{
+    background:-moz-linear-gradient(top, #c8c8c8, #a2a2a2);
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#c8c8c8), to(#a2a2a2));
+}
+.zl_drug_target_page{
+    background:-moz-linear-gradient(top, #e8e8e8, #c8c8c8);
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#e8e8e8), to(#c8c8c8));
+}
+.zl_drug_combination_page{
+    background:-moz-linear-gradient(top, #f4f6f8, #e8e8e8);
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#f4f6f8), to(#e8e8e8));
+}
+
+/* about table style */
+.zl_individual_drug_page main{
+    width: 70%;
+    padding: 10px;
+    background: #FFFFFF;
+    margin: -20px auto;
+    box-shadow: 0 30px 30px -10px rgba(33, 71, 109, 0.3), 0 0 20px -2px rgba(15, 81, 148, 0.2);
+
+}
+.zl_table ,.zl_table td  {
+    border: 1px solid #e8e8e8;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+}
+
+.zl_table {
+    margin: 0 auto 18px;
+    border: none;
+}
+
+.zl_table caption{
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.zl_table th{
+    border: 1px solid #e8e8e8;
+    border-collapse: collapse;
+    padding: 20px;
+}
+.zl_table tr{
+    transition:background-color 0.35s;
+}
+.zl_table tr:nth-child(odd) {
+    background-color: #eeeeee;
+}
+.zl_table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.zl_table tr:first-child{
+    background: #FFFFFF;
+    border: none;
+}
+.zl_table tr:first-child td{
+    border: none;
+}
+
+.zl_table tr:not(:first-child):hover{
+    background-color: #dadada;
+    cursor:default;
+}
+.zl_table tr:not(:first-child):hover td,.zl_table tr:not(:first-child):hover th{
+    border: 1px solid #dadada;
+}
+
+.zl_drug_target_page main,.zl_drug_combination_page main{
+    width: 70%;
+    padding: 10px;
+    background: #f4f6f8;
+    margin: -20px auto;
+    box-shadow: 0 30px 30px -10px rgba(33, 71, 109, 0.3), 0 0 20px -2px rgba(15, 81, 148, 0.2);
+
+}
+.zl_drug_target_page main p,.zl_drug_combination_page main p{
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.zl_drug_target_page main>div ,.zl_drug_combination_page main>div{
+    width: 100%;
+    min-height: 500px;
+}
+
+/* about the paging block */
+.zl_paging_black {
+    font-size: 80%;
+    margin: 3px auto;
+    color: #ff6500;
+    padding: 3px;
+    text-align: center;
+}
+.zl_paging_black .disabled {
+    color: #ffe3c6;
+    margin-right: 3px;
+    padding: 5px 7px;
+    border: 1px solid #ffe3c6;
+}
+
+.zl_paging_black .current {
+    font-weight: bold;
+    color: #ff6500;
+    padding: 5px 8px;
+    border: 1px solid #eeeeee;
+    background: #ffbe94;
+}
+.zl_paging_black a{
+    color: #ff6500;
+    margin-right: 3px;
+    padding: 5px 8px;
+    border: 1px solid #eeeeee;
+    text-decoration: none;
+}
+
+
+.zl_tutorial_page main{
+    width: 60%;
+    min-height: 530px;
+    margin: 20px auto;
+}
+
+.zl_drop_down main{
+    width: 100%;
+}
+.zl_download_page{
+    display: flex;
+    flex-direction: column;
+}
+
+.zl_download_header{
+    flex: 0 0 auto;
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    background: #F4F7FC;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.zl_download_header h1{
+    padding: 12px;
+    font-size: 34px;
+}
+.zl_download_header p{
+    font-size: 18px;
+    color: #34302d;
+}
+/*世纪楼主楼301 018 06*/
+.zl_download_page main{
+    flex: 1 0 auto;
+    background: #FFFFFF;
+    width: 100%;
+    box-sizing:border-box;
+    padding:30px 140px;
+
+    text-align: center;
+}
+
+.zl_download_title{
+    font-size: 25px;
+    border-bottom: 0;
+    text-align: center;
+    color: #293c55;
+    padding: 10px;
+}
+.zl_download_tips{
+    color: #d9334C;
+    font: italic 14px Georgia, serif;
+}
+.zl_download_page main >div{
+    width: 64%;
+    min-height: 100px;
+    margin: 20px auto;
+    text-align: left;
+}
+.zl_download_table_title{
+    padding: 12px 0;
+}
+.zl_download_table{
+    min-width: 880px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    padding: 12px;
+    border-collapse: collapse;
+}
+.zl_download_table td,.zl_download_table th{
+    border: 1px solid #e8e8e8;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+}
+.zl_download_table a{
+    color: #337ab7;
+}
+
+.zl_download_page ul{
+    padding:10px 60px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+}
+.zl_download_page ul li{
+    padding: 2px;
+}
+
+/*  about the special style  */
+
+.zl_block_title{
+    padding-left: 15px;
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+}
+.zl_block_title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: #26b89a;
+}
+.zl_content_text{
+    padding: 0 0 10px 15px;
+    font-family:varela round,sans-serif;
+    font-size: 14px;
+    color: #34302d;
+}
+.zl_content_text p{
+    padding: 4px;
+}
+.zl_content_text figure{
+    padding: 12px;
+    box-sizing:border-box;
+}
+.zl_content_text figure img{
+    width: 100%;
+    object-fit: contain;
+    /*border: 1px solid rgba(33,71,109,0.3);*/
+}
+.zl_content_text figure figcaption{
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+}
+
+    /* about the footer */
+footer{
+
+    flex: 0 0 auto;
+
+    width: 100%;
+    height: 200px;
+    background:#2a2a2a;
+    font-family: Arial SansSerif, serif;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.bottom-info{
+    width: 60%;
+    height: 50%;
+    border-top: 1px solid #666;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bottom-info div{
+    height: 40%;
+    width:60%;
+
+    font-size: 14px;
+    color: #666;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

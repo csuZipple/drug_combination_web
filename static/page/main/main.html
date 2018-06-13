@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DrugCombDB is devoted to the research and development of multi-component drugs.">
+    <meta name="author" content="zipple">
+    <meta name="keywords" content="drug,combination,database">
+    <title>DrugCombDB - the drug combination database</title>
+    <link href="../../resource/css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../../resource/css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../../resource/css/dcdb.css" type="text/css" rel="stylesheet"/>
+    <!-- @media query -->
+</head>
+<body>
+    <header>
+        <a href="main.html" class="zl_logo">DrugCombDB</a>
+        <div class="zl_tabs">
+            <a class="active" href="main.html">home</a>
+            <a href="browser.html">browser</a>
+            <a href="tutorial.html">tutorial</a>
+            <a href="download.html">download</a>
+            <div class="zl_drop_down">contact</div>
+        </div>
+
+        <div class="zl_search_wrapper">
+            <input type="text" title="" placeholder="Search drugs or other..."/>
+            <img src="../../resource/images/icon/search.png" alt="search">
+
+            <div class="zl_search_tips">
+                <ul>
+                    <li>This is tips placeholder</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="zl_page zl_main_page">
+        <main>
+            <!-- about the information -->
+            <h1>Drug Combination Database.</h1>
+            <p>
+                The Drug Combination Database (DrugCombDB) is devoted to the research and development of multi-component drugs. By collecting and organizing known examples of drug combinations, it aims to facilitate in-depth analyses of these cases, to summarize patterns of coordinated drug actions, and to provide a basis for theoretical modeling and simulation of such beneficial drug combinations.
+            </p>
+            <div class="zl_detail">
+                <p>Accumulating scientific and clinical evidences have suggested the use of drug combinations as a safe and effective approach, to treat complicated and refractory diseases. The Drug Combination Database (DrugCombDB) is devoted to the research and development of multi-component drugs. By collecting and organizing known examples of drug combinations, it aims to facilitate in-depth analyses of these cases, to summarize patterns of coordinated drug actions, and to provide a basis for theoretical modeling and simulation of such beneficial drug combinations.</p>
+                <p>The current version of DCDB collected 1363 drug combinations (330 approved and 1033 investigational, including 237 unsuccessful usages), involving 904 individual drugs, 805 targets. DrugCombDB provides, for each drug combination, its combined activity/indications, possible mechanism, drug interactions between its components, and current development status; for each individual drug, its chemical, pharmacological and pharmaceutical properties, together with its known molecular targets; and for each drug target, its sequence, function annotation and affiliated pathway. Extensive cross-links and external links are available. </p>
+                <p>DrugCombDB was created with the support of Hunan Provincial Natural Science Foundation, China (Grant No. R207609) and China Postdoctoral Science Foundation grant No. 2012M521164. Its maintenance and operational cost is covered by the Maintenance Grant to Provincial Key Laboratory of Biochemistry, Hunan, China.</p>
+                <button class="zl_btn zl_fold" onclick="hideLearnMore()">Fold this</button>
+            </div>
+            <button class="zl_btn zl_learn_more" onclick="toLearnMore(this)">to learn more</button>
+        </main>
+
+        <aside>
+            <!-- about the images -->
+            <figure>
+                <img src="../../resource/images/antibiotic-capsules-close-up-139398.jpg" alt="The drugs">
+                <figcaption>The DrugCombDB Examples</figcaption>
+            </figure>
+        </aside>
+    </section>
+
+    <footer>
+        <div class="bottom-info">
+            <div>Copyright &copy; 2018 CSU. All Rights Reserved. </div>
+            <div>DrugCombDB</div>
+        </div>
+    </footer>
+
+<!--  about dialog  -->
+    <div class="zl_contact_dialog">
+        <h3>Get in touch with us</h3>
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <p>First Name:</p>
+                <input type="text" title="">
+            </div>
+
+            <div class="zl_input">
+                <p>Last Name:</p>
+                <input type="text" title="">
+            </div>
+        </div>
+
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <p>Your Email:</p>
+                <input type="text" title="">
+            </div>
+        </div>
+
+        <div class="zl_form_row">
+            <div class="zl_input zl_full_row">
+                <p>How can we help?</p>
+                <textarea name="" id="" cols="30" rows="5" title="" placeholder="All comments and suggestions are welcome."></textarea>
+            </div>
+        </div>
+
+
+        <div class="zl_form_row">
+            <div class="zl_input">
+                <button class="zl_btn zl_submit_btn" onclick="onSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../resource/js/jquery.js"></script>
+<script type="text/javascript" src="../../resource/js/base.js"></script>
+</html>
