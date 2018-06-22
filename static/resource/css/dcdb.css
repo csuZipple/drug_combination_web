@@ -183,6 +183,8 @@ a.active:hover::after{
 .zl_search_tips ul{
     width:100%;
     height: auto;
+    max-height: 200px;
+    overflow-y: scroll;
 
     list-style: none;
     background: rgba(255,255,255,.9);
@@ -199,10 +201,12 @@ a.active:hover::after{
     display: flex;
     align-items: center;
 }
-
+.zl_search_tips ul li a{
+    color: #212121;
+}
 .zl_search_tips ul li:hover{
-    background: #000;
-    color: #FFFFFF;
+    background: #eeeeee;
+    color: #e14d57;
 }
 
 /* about the first page of main.html */
@@ -377,11 +381,11 @@ figure img{
     padding: 8px;
     font-weight: 700;
 }
-.zl_browser_page main figure figcaption:hover{
-    text-decoration:underline;
+.zl_browser_page main figure figcaption a{
+    color: #777777;
 }
-.zl_browser_page main figure p:hover{
-    text-decoration:underline;
+.zl_browser_page main figure figcaption a:hover{
+    color: #212121;
 }
 .zl_browser_page main figure p{
     padding: 8px;
@@ -391,7 +395,7 @@ figure img{
 
 /*  about data display  */
 
-.zl_individual_drug_page{
+/*.zl_individual_drug_page{
     background:-moz-linear-gradient(top, #c8c8c8, #a2a2a2);
     background:-webkit-gradient(linear, 0 0, 0 bottom, from(#c8c8c8), to(#a2a2a2));
 }
@@ -402,14 +406,14 @@ figure img{
 .zl_drug_combination_page{
     background:-moz-linear-gradient(top, #f4f6f8, #e8e8e8);
     background:-webkit-gradient(linear, 0 0, 0 bottom, from(#f4f6f8), to(#e8e8e8));
-}
+}*/
 
 /* about table style */
 .zl_individual_drug_page main{
     width: 70%;
     padding: 10px;
     background: #FFFFFF;
-    margin: -20px auto;
+    margin: 20px auto;
     box-shadow: 0 30px 30px -10px rgba(33, 71, 109, 0.3), 0 0 20px -2px rgba(15, 81, 148, 0.2);
 
 }
@@ -423,6 +427,11 @@ figure img{
 .zl_table {
     margin: 0 auto 18px;
     border: none;
+    font-family: "Microsoft YaHei UI", serif;
+}
+
+.zl_table a{
+    color: inherit;
 }
 
 .zl_table caption{
@@ -487,6 +496,15 @@ figure img{
     color: #ff6500;
     padding: 3px;
     text-align: center;
+    font-family: "Microsoft YaHei UI", serif;
+}
+.zl_paging_black .pre_page{
+    color: #ff6500;
+    margin-right: 3px;
+    padding: 5px 8px;
+    border: 1px solid #eeeeee;
+    text-decoration: none;
+    cursor: pointer;
 }
 .zl_paging_black .disabled {
     color: #ffe3c6;
@@ -644,6 +662,21 @@ figure img{
     color: #666666;
 }
 
+.jump_page{
+    border: 1px solid #ff6500;
+    padding: 2px 3px;
+    width: 50px;
+}
+
+.zl_individual_drug_page main p{
+    padding: 20px 8px;
+    font-size:24px;
+    text-align: center;
+}
+#lineBar{
+    margin: 0 auto;
+}
+
     /* about the footer */
 footer{
 
@@ -683,4 +716,59 @@ footer{
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+/*  loading style  */
+.zl_loader{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+@-webkit-keyframes loading-2{
+    0%{
+        transform:scaleY(1);
+        -moz-transform:scaleY(1);
+        -webkit-transform:scaleY(1);
+    }
+    50%{
+        transform:scaleY(.4);
+        -moz-transform:scaleY(.4);
+        -webkit-transform:scaleY(.4);
+    }
+    100%{
+        transform:scaleY(1);
+        -moz-transform:scaleY(1);
+        -webkit-transform:scaleY(1);
+    }
+}
+.loading i{display:inline-block;width:4px;height:35px;border-radius:2px; background:#26b89a;margin:0 2px;}
+.loading i:nth-child(1){
+    -webkit-animation:loading-2 1s ease-in .1s infinite;
+    -moz-animation:loading-2 1s ease-in .1s infinite;
+    animation:loading-2 1s ease-in .1s infinite;
+}
+.loading i:nth-child(2){
+    -webkit-animation:loading-2 1s ease-in .2s infinite;
+    -moz-animation:loading-2 1s ease-in .2s infinite;
+    animation:loading-2 1s ease-in .2s infinite;
+}
+.loading i:nth-child(3){
+    -webkit-animation:loading-2 1s ease-in .3s infinite;
+    -moz-animation:loading-2 1s ease-in .3s infinite;
+    animation:loading-2 1s ease-in .3s infinite;
+}
+.loading i:nth-child(4){
+    -webkit-animation:loading-2 1s ease-in .4s infinite;
+    -moz-animation:loading-2 1s ease-in .4s infinite;
+    animation:loading-2 1s ease-in .4s infinite;
+}
+.loading i:nth-child(5){
+    -webkit-animation:loading-2 1s ease-in .5s infinite;
+    -moz-animation:loading-2 1s ease-in .5s infinite;
+    animation:loading-2 1s ease-in .5s infinite;
 }

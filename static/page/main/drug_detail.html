@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="DrugCombDB is devoted to the research and development of multi-component drugs.">
@@ -33,8 +33,38 @@
             </div>
         </div>
     </header>
-    <section class="zl_page">
+    <section class="zl_page zl_individual_drug_page">
        <!--the drug detail-->
+        <!--显示不同的药物组合-->
+            <main>
+                <table class="zl_table">
+                    <caption>Combination Drug Information</caption>
+                    <tr>
+                        <td><span>Filter:</span>&nbsp;</td>
+                        <td colspan="2">
+                            <label>
+                                Entries:
+                                <select class="entries">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr><th>id</th><th>fid</th><th>Drug1Name</th><th>Drug2Name</th><th>Conc1</th><th>Conc2</th><th>Growth</th><th>cellline</th><th>source</th></tr>
+                </table>
+                <!-- about paging block -->
+                <div class="zl_paging_black">
+                    <span class="pre_page disabled">&lt; </span>
+                    <span class="current">0</span>
+                    <a href="#!" class="next_page">&gt; </a>
+                    <input type="number" class="jump_page" title="jump to page..">
+                    <span style="margin-left: 10px;">Total page: <span class="total_page"></span></span>
+                </div>
+            </main>
     </section>
 
     <footer>
@@ -81,7 +111,74 @@
         </div>
     </div>
 
+    <div class="zl_loader">
+        <div class="loading">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+    </div>
+
+
 </body>
 <script src="../../resource/js/jquery.js"></script>
 <script type="text/javascript" src="../../resource/js/base.js"></script>
+<script>
+
+    /*  about the page controls  */
+    let currentSize = 10;//default
+    loadDrugPage(0,currentSize);/*The default is 0 ,size is 10*/
+    let page =$(".jump_page");
+    page.bind("input",function () {
+        if(page.val()<0){
+            page.val(0);
+        }
+        let maxPage = parseInt($(".total_page").text());
+        if (maxPage!==""){
+            console.log(page.val());
+            console.log(page.val()>maxPage);
+            if (page.val()>maxPage){
+                page.val(maxPage);
+            }
+        }
+    });
+
+    $(".pre_page").click(function () {
+        if($(".pre_page").hasClass("disable")){
+            console.log("can't jump")
+        }else{
+            let current = $(".current").text();
+            gotoPage(parseInt(current)-1,currentSize);
+        }
+    });
+    $(".next_page").click(function () {
+        if($(".next_page").hasClass("disable")){
+            console.log("can't jump")
+        }else{
+            let current = $(".current").text();
+            gotoPage(parseInt(current)+1,currentSize);
+        }
+    });
+
+/*    page.blur(function () {
+        gotoPage(page.val());
+    });*/
+
+    page.keydown(function (event) {
+       if (event.keyCode===13){
+           gotoPage(parseInt(page.val()),currentSize);
+       }
+    });
+
+    $(".entries").change(function () {
+        if ($(this).children('option:selected').val()!==currentSize){
+            currentSize = $(this).children('option:selected').val();
+            loadDrugPage(0,currentSize);
+        }
+    });
+
+
+</script>
 </html>
